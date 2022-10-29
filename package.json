@@ -1,5 +1,5 @@
 {
-  "name": "portal-ts",
+  "name": "blossombooks",
   "version": "0.1.0",
   "private": true,
   "scripts": {
@@ -9,6 +9,9 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@tanstack/react-query": "^4.10.1",
+    "@tanstack/react-query-devtools": "^4.10.1",
+    "axios": "^1.0.0",
     "next": "12.3.0",
     "react": "18.2.0",
     "react-dom": "18.2.0"
