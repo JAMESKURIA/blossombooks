@@ -2,16 +2,11 @@ import Banner from "components/home/Banner";
 import Services from "components/home/Services";
 import Header from "components/layout/Header";
 import PageFooter from "components/layout/PageFooter";
-import type { GetStaticProps } from "next";
+import { services } from "data";
 import { ReactElement } from "react";
-import { IService } from "types/data";
 import { NextPageWithLayout } from "./_app";
 
-interface IProps {
-  services: IService[];
-}
-
-const Home: NextPageWithLayout<IProps> = ({ services }) => {
+const Home: NextPageWithLayout = () => {
   return (
     <div>
       {/* <section className="min-h-[70vh] bg-red-500"></section> */}
@@ -22,16 +17,6 @@ const Home: NextPageWithLayout<IProps> = ({ services }) => {
 };
 
 export default Home;
-
-export const getStaticProps: GetStaticProps = async (context) => {
-  const res = await fetch("http://localhost:3000/api/services");
-  const data: IService[] = await res.json();
-  return {
-    props: {
-      services: data,
-    },
-  };
-};
 
 Home.getLayout = function getLayout(page: ReactElement) {
   return (
